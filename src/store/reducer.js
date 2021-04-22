@@ -22,9 +22,16 @@ const reducer = (state = initialState, action) => {
     case actionTypes.POST_FAILED:
       return {
         ...state,
-        respose: action.response,
+        response: action.response,
         loading: false,
       };
+    case actionTypes.CLEAR_STATE: {
+      return {
+        ...state,
+        loading: false,
+        response: null,
+      };
+    }
     default:
       return state;
   }

@@ -1,15 +1,17 @@
 import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
-import { postStart } from "../../store/action";
+import { postStart, clearState } from "../../store/action";
 import "./Event.css";
 
 import Header from "../../components/Header/Header";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
+import Modal from "../../components/Modal/Modal";
 import img from "../../assets/img.jpg";
 import ImageIcon from "@material-ui/icons/Image";
 
 const Event = (props) => {
+  console.log(props.response);
   const noteRef = useRef();
   const [image, setImage] = useState(undefined);
   const [form, setForm] = useState({
@@ -71,6 +73,7 @@ const Event = (props) => {
 
   return (
     <>
+      {props.response && <Modal>{props.response}</Modal>}
       <Header />
       <div className='event'>
         <div className='event__grid'>
@@ -101,10 +104,17 @@ const Event = (props) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    response: state.response,
+    loading: state.loading,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     postStart: (payload) => dispatch(postStart(payload)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Event);
+export default connect(mapStateToProps, mapDispatchToProps)(Event);
