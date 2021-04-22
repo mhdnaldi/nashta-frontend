@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
-import { postStart, clearState } from "../../store/action";
+import { postStart } from "../../store/action";
 import "./Event.css";
 
 import Header from "../../components/Header/Header";
@@ -11,7 +11,6 @@ import img from "../../assets/img.jpg";
 import ImageIcon from "@material-ui/icons/Image";
 
 const Event = (props) => {
-  console.log(props.response);
   const noteRef = useRef();
   const [image, setImage] = useState(undefined);
   const [form, setForm] = useState({

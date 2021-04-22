@@ -3,31 +3,30 @@ import "./Card.css";
 
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PersonIcon from "@material-ui/icons/Person";
+import moment from "moment";
 
 const Card = (props) => {
+  console.log(props.images);
   return (
     <div className='card'>
-      <div className='card__image'></div>
+      <div className='card__image'>
+        <img src={`http://localhost:3001/${props.images}`} alt='' />
+      </div>
       <div className='card__title'>
         <div className='card__title_location'>
           <LocationOnIcon style={{ color: "#f36d2a" }} />
-          <strong>Jakarta</strong>
+          <strong>{props.location}</strong>
         </div>
-        <h3>Meeting with CEO</h3>
-        <p className='date'>20 Mei 1997</p>
+        <h3>{props.title}</h3>
+        <p className='date'>{moment(props.date).format("LL")}</p>
       </div>
       <div className='card__title_participant'>
         <PersonIcon style={{ color: "rgb(225, 241, 245)" }} />
-        <p>Muhammad Naldi</p>
+        <p>{props.participant}</p>
       </div>
       <div className='card__footer'>
         <p>Note: </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <p>{props.note}</p>
       </div>
     </div>
   );
