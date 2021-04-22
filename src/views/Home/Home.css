@@ -8,3 +8,9 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
+
+@media (max-width: 700px) {
+  .home__card_list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -84,3 +84,19 @@ input[type="file"] {
   cursor: pointer;
   left: 0;
 }
+
+@media (max-width: 700px) {
+  .event__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event__form {
+    background-image: url("../../assets/img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .event__img {
+    display: none;
+  }
+}
