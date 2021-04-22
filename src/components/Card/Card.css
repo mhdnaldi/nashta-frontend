@@ -1,0 +1,59 @@
+.card {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  color: rgb(141, 141, 141);
+  font-weight: 500;
+}
+
+.card__image {
+  height: 240px;
+  border-radius: 10px 10px 0 0;
+  background-color: blue;
+}
+
+.card__title {
+  margin: 10px 20px;
+}
+
+.card__title_location {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.card__title .date {
+  transform: translateY(-10px);
+}
+
+.card__title_participant {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0 10px;
+}
+
+.card__footer {
+  border-radius: 0 0 10px 10px;
+  background-color: rgb(235, 248, 251);
+}
+
+.card__footer p:nth-child(1) {
+  color: #111;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.card__footer p:nth-child(2) {
+  color: rgb(141, 141, 141);
+  font-weight: 300;
+  margin: 0;
+  padding: 0 20px 20px 20px;
+}

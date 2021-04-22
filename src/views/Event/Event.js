@@ -1,8 +1,15 @@
 import React from "react";
 import "./Event.css";
 
+import Header from "../../components/Header/Header";
+
 const Event = (props) => {
-  return <div className='event'>Event Page</div>;
+  return (
+    <>
+      <Header />
+      <div className='event'>Event Page</div>
+    </>
+  );
 };
 
 export default Event;

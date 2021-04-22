@@ -1,0 +1,28 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
+}
+
+.header__logo {
+  display: grid;
+  place-items: center;
+  color: #111;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header__link {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__link a {
+  text-decoration: none;
+  color: #f36d2a;
+  font-size: 20px;
+  font-weight: bold;
+}
