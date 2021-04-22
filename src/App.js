@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Routes,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 
-function App() {
+import Home from "./views/Home/Home";
+import Event from "./views/Event/Event";
+import Dashboard from "./views/Dashboard/Dashboard";
+import NotFound from "./views/404/404";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Switch>
+        <Route path='/' exact>
+          <Home />
+        </Route>
+        <Route path='/add-event' exact>
+          <Event />
+        </Route>
+        <Route path='/dashboard' exact>
+          <Dashboard />
+        </Route>
+        <Route path='/404' exact>
+          <NotFound />
+        </Route>
+        <Redirect to='/404' />
+      </Switch>
+    </Routes>
   );
-}
+};
 
 export default App;
