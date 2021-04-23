@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import {
   BrowserRouter as Routes,
   Route,
@@ -6,23 +6,30 @@ import {
   Switch,
 } from "react-router-dom";
 
-import Home from "./views/Home/Home";
 import Event from "./views/Event/Event";
-import Dashboard from "./views/Dashboard/Dashboard";
+// import Home from "./views/Home/Home";
+// import Dashboard from "./views/Dashboard/Dashboard";
 import NotFound from "./views/404/404";
+
+const Home = lazy(() => import("./views/Home/Home"));
+const Dashboard = lazy(() => import("./views/Dashboard/Dashboard"));
 
 const App = () => {
   return (
     <Routes>
       <Switch>
         <Route path='/' exact>
-          <Home />
+          <Suspense fallback={<p>Loading...</p>}>
+            <Home />
+          </Suspense>
         </Route>
         <Route path='/add-event' exact>
           <Event />
         </Route>
         <Route path='/dashboard' exact>
-          <Dashboard />
+          <Suspense fallback={<p>Loading...</p>}>
+            <Dashboard />
+          </Suspense>
         </Route>
         <Route path='/404' exact>
           <NotFound />

@@ -15,8 +15,7 @@
   font-weight: bold;
 }
 
-.backdrop,
-.header__logo .logo {
+.backdrop {
   display: none;
 }
 
@@ -32,6 +31,10 @@
   color: #f36d2a;
   font-size: 20px;
   font-weight: bold;
+}
+
+.burger__menu {
+  display: none;
 }
 
 @media (max-width: 700px) {
@@ -67,6 +70,10 @@
 
   .burger__menu {
     display: block;
+  }
+
+  .header__logo .logo {
+    display: none;
   }
 }
 
