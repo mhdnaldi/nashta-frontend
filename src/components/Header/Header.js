@@ -26,13 +26,31 @@ const Header = (props) => {
         </div>
       </div>
       <div className={`${show ? "header__link show" : "header__link none"}`}>
-        <NavLink exact activeStyle={{ color: "#111" }} to='/'>
+        <NavLink
+          exact
+          activeStyle={{
+            color: "#111",
+            textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+          }}
+          to='/'>
           HOME
         </NavLink>
-        <NavLink exact activeStyle={{ color: "#111" }} to='/add-event'>
+        <NavLink
+          exact
+          activeStyle={{
+            color: "#111",
+            textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+          }}
+          to='/add-event'>
           ADD EVENT
         </NavLink>
-        <NavLink exact activeStyle={{ color: "#111" }} to='/dashboard'>
+        <NavLink
+          exact
+          activeStyle={{
+            color: "#111",
+            textShadow: "0 2px 4px rgba(0,0,0,0.2)",
+          }}
+          to='/dashboard'>
           DASHBOARD
         </NavLink>
       </div>

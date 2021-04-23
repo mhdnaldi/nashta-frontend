@@ -31,7 +31,6 @@ export const postSuccess = (payload) => {
   };
 };
 export const postFailed = (err) => {
-  // console.log(err.data.message);
   return {
     type: actionTypes.POST_FAILED,
     response: err.data.message,

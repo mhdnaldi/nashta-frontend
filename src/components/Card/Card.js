@@ -6,7 +6,6 @@ import PersonIcon from "@material-ui/icons/Person";
 import moment from "moment";
 
 const Card = (props) => {
-  console.log(props.images);
   return (
     <div className='card'>
       <div className='card__image'>

@@ -10,14 +10,8 @@ const Home = (props) => {
   useEffect(() => {
     axios
       .get("http://localhost:3001/events")
-      .then((res) => setCardList(res.data.result))
-      .catch((err) => {
-        console.log(err);
-      });
+      .then((res) => setCardList(res.data.result));
   }, []);
-
-  console.log(cardList);
-
   let cardElement = null;
   if (cardList) {
     cardElement = cardList.map((el) => (
